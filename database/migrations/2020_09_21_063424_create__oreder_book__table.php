@@ -17,20 +17,13 @@ class CreateOrederBookTable extends Migration
         Schema::create('OrderBooks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('Bookid')->unsigned();
-           // $table->foreign('Bookid')->references('id')->on('Books')->onDelete('cascade');
             $table->bigInteger('orderid')->unsigned();
-          //  $table->foreign('orderid')->references('id')->on('orders')->onDelete('cascade');
-
             $table->timestamps();
+            $table->foreign('orderid')->references('id')->on('orders');
+            $table->foreign('Bookid')->references('id')->on('Books');
         });
-        Schema::table('OrderBooks', function($table) {
-       $table->foreign('Bookid')->references('id')->on('Books');
-
-   });
-        Schema::table('OrderBooks', function($table) {
-       $table->foreign('orderid')->references('id')->on('orders');
-
-   });
+        
+        
     }
 
     /**
