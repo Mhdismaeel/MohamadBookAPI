@@ -17,7 +17,7 @@ class CreateOrderTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('userid')->unsigned();
-            $table->foreign('userid')->references('id')->on('Users');
+            $table->foreign('userid')->references('id')->on('Users')->onDelete('cascade');
             $table->double('sub_total');
             $table->double('total');
             $table->double('discount');
