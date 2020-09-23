@@ -13,12 +13,13 @@ class CreateOrederBookTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('OrderBooks');
         Schema::create('OrderBooks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('Bookid')->unsigned();
             $table->foreign('Bookid')->references('id')->on('Books')->onDelete('cascade');
             $table->bigInteger('orderid')->unsigned();
-            $table->foreign('orderid')->references('id')->on('order1s')->onDelete('cascade');
+            $table->foreign('orderid')->references('id')->on('orders')->onDelete('cascade');
 
             $table->timestamps();
         });
