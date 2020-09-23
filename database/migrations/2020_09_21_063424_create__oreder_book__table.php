@@ -24,9 +24,13 @@ class CreateOrederBookTable extends Migration
          //   $table->foreign('Bookid')->references('id')->on('Books');
         });
         
-      /*  Schema::table('OrderBooks', function($table) {
+       Schema::table('OrderBooks', function($table) {
        $table->foreign('Bookid')->references('id')->on('Books');
-   });*/
+   });
+        
+        Schema::table('OrderBooks', function($table) {
+       $table->foreign('orderid')->references('id')->on('orders');
+   });
         
     }
 
