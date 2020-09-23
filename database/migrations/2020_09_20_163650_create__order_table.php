@@ -24,9 +24,9 @@ class CreateOrderTable extends Migration
             $table->timestamps();
         });
         
-      /*  Schema::table('orders', function($table) {
+        Schema::table('orders', function($table) {
        $table->foreign('userid')->references('id')->on('users');
-   });*/
+   });
     }
 
     /**
