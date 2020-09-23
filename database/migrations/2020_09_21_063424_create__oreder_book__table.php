@@ -20,13 +20,13 @@ class CreateOrederBookTable extends Migration
             $table->bigInteger('Bookid')->unsigned();
             $table->bigInteger('orderid')->unsigned();
             $table->timestamps();
-            $table->foreign('orderid')->references('id')->on('orders');
+           // $table->foreign('orderid')->references('id')->on('orders');
          //   $table->foreign('Bookid')->references('id')->on('Books');
         });
         
-        Schema::table('OrderBooks', function($table) {
+      /*  Schema::table('OrderBooks', function($table) {
        $table->foreign('Bookid')->references('id')->on('Books');
-   });
+   });*/
         
     }
 
