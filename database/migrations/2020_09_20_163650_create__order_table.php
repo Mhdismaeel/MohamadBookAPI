@@ -13,7 +13,6 @@ class CreateOrderTable extends Migration
      */
     public function up()
     {
-         Schema::dropIfExists('orders');
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('userid')->unsigned();
