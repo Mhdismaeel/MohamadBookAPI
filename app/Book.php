@@ -8,6 +8,6 @@ class Book extends Model
 {
     public function orderbook()
     {
-        return $this->belongsToMany(order::class);
+        //return $this->belongsToMany(order::class);
        }
 }
